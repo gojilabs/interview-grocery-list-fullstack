@@ -13,11 +13,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum GroceryItemStatus {
+  RANOUT
+  HAVE
+}
+
 model User {
   id       String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   email    String @unique
   password String?
 
-  createdAt   DateTime  @default(now()) @db.Timestamptz()
-  updatedAt   DateTime  @updatedAt @db.Timestamptz()
+  createdAt DateTime  @default(now()) @db.Timestamptz()
+  updatedAt DateTime  @updatedAt @db.Timestamptz()
+}
+
+model GroceryItem {
+  id       String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name     String
+  quantity Int
+  priority Int
+  status   GroceryItemStatus @default(RANOUT)
+  createdAt DateTime  @default(now()) @db.Timestamptz()
+  updatedAt DateTime  @updatedAt @db.Timestamptz()
 }

@@ -11,5 +11,3 @@ CREATE TABLE "User" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
-
-INSERT INTO "User" ("email", "password", "createdAt", "updatedAt") VALUES ('testuser@example.com', 'testpassword', now(), now());
