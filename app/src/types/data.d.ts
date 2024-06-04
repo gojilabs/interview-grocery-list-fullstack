@@ -7,3 +7,8 @@ interface GroceryItem {
   createdAt?: string
   updatedAt?: string
 }
+
+interface GroceryFormItem {
+  name: string
+  quantity?: number
+}
