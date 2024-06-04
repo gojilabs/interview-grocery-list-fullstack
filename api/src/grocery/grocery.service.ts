@@ -9,6 +9,9 @@ export class GroceryService {
   constructor(private readonly prisma: PrismaService) {}
 
   async filterGroceries(filter: FilterGroceryDto) {
+    /**
+     * @todo add pagination
+     */
     const groceries = await this.prisma.groceryItem.findMany({
       where: filter,
       orderBy: [{ priority: 'asc' }, { name: 'asc' }],

@@ -1,4 +1,4 @@
-import { IsEnum, IsNumber, IsOptional, IsString } from 'class-validator'
+import { IsEnum, IsNumber, IsOptional, IsString, IsUUID } from 'class-validator'
 import { Transform } from 'class-transformer'
 import { PartialType } from '@nestjs/mapped-types'
 
@@ -22,3 +22,8 @@ export class CreateGroceryDto {
 }
 
 export class UpdateGroceryDto extends PartialType(CreateGroceryDto) {}
+
+export class GroceryItemIdDto {
+  @IsUUID()
+  id: string
+}

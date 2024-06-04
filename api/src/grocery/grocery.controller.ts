@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Param, Post, Put, Query } from '@nestjs/common'
 import { GroceryService } from './grocery.service'
 import { FilterGroceryDto } from './dto/filter.dto'
-import { CreateGroceryDto, UpdateGroceryDto } from './dto/grocery.dto'
+import { CreateGroceryDto, GroceryItemIdDto, UpdateGroceryDto } from './dto/grocery.dto'
 
 @Controller({
   version: '1',
@@ -29,11 +29,15 @@ export class GroceryController {
   }
 
   @Put(':id')
-  async updateGrocery(@Param('id') id: string, @Body() updateGroceryDto: UpdateGroceryDto) {
+  async updateGrocery(@Param() { id }: GroceryItemIdDto, @Body() updateGroceryDto: UpdateGroceryDto) {
     const data = await this.groceryService.updateGrocery(id, updateGroceryDto)
 
     return {
       data,
     }
   }
+
+  /**
+   * @todo add delete and maybe bulk delete for grocery items
+   */
 }
