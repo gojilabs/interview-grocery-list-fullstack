@@ -7,10 +7,11 @@ import { Card, CardContent, CardHeader, IconButton } from '@mui/material'
 import Container from '@mui/material/Container'
 
 import GroceryList from '@components/GroceryList'
-import { QueryClientProvider, queryClient } from '@utils/client'
+import { queryClient } from '@utils/client'
 import GroceryForm from '@components/GroceryForm'
 import { useState } from 'react'
 import { Add, Edit, Save } from '@mui/icons-material'
+import { QueryClientProvider } from '@tanstack/react-query'
 
 function App() {
   const [openForm, setOpenForm] = useState(false)
