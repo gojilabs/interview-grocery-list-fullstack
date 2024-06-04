@@ -10,11 +10,13 @@ export class CreateGroceryDto {
 
   @IsNumber()
   @Transform(({ value }) => (value ? Number(value) : undefined))
-  priority: number
+  @IsOptional()
+  priority?: number
 
   @IsNumber()
   @Transform(({ value }) => (value ? Number(value) : undefined))
-  quantity: number
+  @IsOptional()
+  quantity?: number
 
   @IsEnum(GroceryItemStatus)
   @IsOptional()

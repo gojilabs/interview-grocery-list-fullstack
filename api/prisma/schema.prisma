@@ -30,8 +30,8 @@ model User {
 model GroceryItem {
   id       String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   name     String
-  quantity Int
-  priority Int
+  quantity Int?   @default(0)
+  priority Int?   @default(5)
   status   GroceryItemStatus @default(RANOUT)
   createdAt DateTime  @default(now()) @db.Timestamptz()
   updatedAt DateTime  @updatedAt @db.Timestamptz()
