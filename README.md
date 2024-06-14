@@ -1,8 +1,8 @@
 # Interview Project: Grocery List
-We need to build a grocery list web app. The goal is to make it easy for me to remember what food to buy at the grocery store. There is a full-stack application that should use the backend. This app will use React on the frontend and [NestJS](https://nestjs.com/) on the backend. The database for the project should be PostgreSQL and the abstraction layer should be handled by [Prisma](https://www.prisma.io/). Indexes should be thought through and be effective. This application should have authorization and authentication.
+We need to build a grocery list web app. The goal is to make it easy for me to remember what food to buy at the grocery store. There is a full-stack application that should use the backend. This app will use React on the frontend and [NestJS](https://nestjs.com/) on the backend. The database for the project should be PostgreSQL and the abstraction layer should be handled by [Prisma](https://www.prisma.io/) but you can use any other ORM you prefer. Indexes should be thought through and be effective.
 
 Both parts of the app should use Typescript.
-Fronted part should use [material ui](https://mui.com/material-ui/) and [react-query](https://react-query.tanstack.com/). For the fronted application, you can choose between [NextJS](https://nextjs.org/) or [Vite](https://vitejs.dev/).
+Fronted part should use [material ui](https://mui.com/material-ui/) (or any other UI library you prefer) and [react-query](https://react-query.tanstack.com/). For the fronted application, you can choose between [NextJS](https://nextjs.org/) or [Vite](https://vitejs.dev/).
 
 # The application
 
