@@ -2,7 +2,7 @@
 We need to build a grocery list web app. The goal is to make it easy for me to remember what food to buy at the grocery store. There is a full-stack application that should use the backend. This app will use React on the frontend and [NestJS](https://nestjs.com/) on the backend. The database for the project should be PostgreSQL and the abstraction layer should be handled by [Prisma](https://www.prisma.io/). Indexes should be thought through and be effective. This application should have authorization and authentication.
 
 Both parts of the app should use Typescript.
-Fronted part should use [shadcn/ui](https://ui.shadcn.com/) and [react-query](https://react-query.tanstack.com/). The fronted application uses [Vite](https://vitejs.dev/).
+Frontend part should use [shadcn/ui](https://ui.shadcn.com/) and [react-query](https://react-query.tanstack.com/). The fronted application uses [Vite](https://vitejs.dev/).
 
 # The application
 

@@ -43,7 +43,7 @@ const GroceryList: FC<{ isEditing?: boolean }> = ({ isEditing }) => {
             </TableCell>
             {isEditing && (
               <TableCell>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" aria-label={`Delete ${item.name}`}>
                   <TrashIcon />
                 </Button>
               </TableCell>
