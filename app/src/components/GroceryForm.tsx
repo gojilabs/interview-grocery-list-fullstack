@@ -1,8 +1,10 @@
 import { FC } from 'react'
 import { useForm, Controller } from 'react-hook-form'
-import { TextField, Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material'
 
 import { useCreateGrocery } from 'hooks/useGrocery'
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@components/ui/dialog'
+import { Button } from '@components/ui/button'
+import { Input } from '@components/ui/input'
 
 const GroceryForm: FC<{ openForm: boolean; setOpenForm: (openForm: boolean) => void }> = ({
   openForm,
@@ -23,26 +25,38 @@ const GroceryForm: FC<{ openForm: boolean; setOpenForm: (openForm: boolean) => v
   }
 
   return (
-    <Dialog open={openForm} onClose={handleFormClose}>
-      <DialogTitle>Add New Item</DialogTitle>
+    <Dialog open={openForm} onOpenChange={(open) => !open && handleFormClose()}>
       <DialogContent>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <DialogHeader>
+          <DialogTitle>Add New Item</DialogTitle>
+        </DialogHeader>
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
           <Controller
             name="name"
             control={control}
             defaultValue=""
-            render={({ field }) => <TextField {...field} autoFocus margin="dense" label="Name" fullWidth />}
+            render={({ field }) => <Input {...field} autoFocus placeholder="Name" />}
           />
           <Controller
             name="quantity"
             control={control}
             defaultValue={0}
-            render={({ field }) => <TextField {...field} margin="dense" label="Quantity" fullWidth />}
+            render={({ field }) => (
+              <Input
+                {...field}
+                value={field.value ?? ''}
+                onChange={(e) => field.onChange(e.target.value === '' ? undefined : Number(e.target.value))}
+                placeholder="Quantity"
+                type="number"
+              />
+            )}
           />
-          <DialogActions>
-            <Button onMouseDown={handleFormClose}>Cancel</Button>
+          <DialogFooter>
+            <Button type="button" variant="outline" onMouseDown={handleFormClose}>
+              Cancel
+            </Button>
             <Button type="submit">Submit</Button>
-          </DialogActions>
+          </DialogFooter>
         </form>
       </DialogContent>
     </Dialog>

@@ -2,7 +2,7 @@
 We need to build a grocery list web app. The goal is to make it easy for me to remember what food to buy at the grocery store. There is a full-stack application that should use the backend. This app will use React on the frontend and [NestJS](https://nestjs.com/) on the backend. The database for the project should be PostgreSQL and the abstraction layer should be handled by [Prisma](https://www.prisma.io/). Indexes should be thought through and be effective. This application should have authorization and authentication.
 
 Both parts of the app should use Typescript.
-Fronted part should use [material ui](https://mui.com/material-ui/) and [react-query](https://react-query.tanstack.com/). For the fronted application, you can choose between [NextJS](https://nextjs.org/) or [Vite](https://vitejs.dev/).
+Fronted part should use [shadcn/ui](https://ui.shadcn.com/) and [react-query](https://react-query.tanstack.com/). The fronted application uses [Vite](https://vitejs.dev/).
 
 # The application
 
@@ -20,7 +20,7 @@ On the entry view, I can see all of the details of the entry, toggle its status,
 If we have a technical interview, and I hope we do, we will focus on enhancing this application and discussing how you worked through some of these problems. It's important that we see your best work, if that means that you do not satisfy all of the requirements here that is okay, we don't expect everyone to finish all parts. If you have to choose between refactoring and making one piece of this perfect and implementing the next feature, choose refactoring because we want to see how your best work looks. We want to see clear, correct code that uses the right data structures and patterns, and we want to see your style. Depending on your expertise you may focus on the backend or the frontend but you should not have to spend more than 8 hours.
 
 ## Setup
-The application is already scaffolded for you, you can start by running `docker-compose up`. This will start the database. The backend is in the `api` folder, and the frontend is in the `app` folder (this is a Vite app but you can replace it with NextJS if you prefer). Before running `yarn start` in the `api` folder you should run `yarn prisma:generate:client`, `yarn prisma:migrate:deploy`, and `npx prisma db seed` to seed the db with default data. First command will create all of the Prisma types for you, the second will create the database schema, and the third will seed the database with some initial data.
+The application is already scaffolded for you, you can start by running `docker-compose up`. This will start the database. The backend is in the `api` folder, and the frontend is in the `app` folder (Vite + React). Before running `yarn start` in the `api` folder you should run `yarn prisma:generate:client`, `yarn prisma:migrate:deploy`, and `npx prisma db seed` to seed the db with default data. First command will create all of the Prisma types for you, the second will create the database schema, and the third will seed the database with some initial data.
 
 ### Nice to haves
 - Authorization and authentication using JWT.

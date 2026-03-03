@@ -41,6 +41,9 @@
       "@hooks/*": [
         "src/hooks/*"
       ],
+      "@lib/*": [
+        "lib/*"
+      ],
     },
   },
   "include": [
